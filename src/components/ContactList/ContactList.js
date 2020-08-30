@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './ContactList.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 class ContactList extends Component {
   constructor() {
@@ -51,4 +52,4 @@ export const mapStateToProps = (state) => ({
   contacts: state.contacts
 });
 
-export default connect(mapStateToProps)(ContactList);
+export default withRouter(connect(mapStateToProps, null)(ContactList));

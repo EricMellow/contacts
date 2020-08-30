@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import './AddContacts.css';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addContact } from '../../redux/actions';
 
 class AddContacts extends Component {
   constructor() {
@@ -15,10 +18,30 @@ class AddContacts extends Component {
     this.setState({ [event.target.id]: event.target.value });
   }
 
+  saveContact = (event) => {
+    event.preventDefault();
+    const contact = {
+      id: Date.now(),
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone
+    };
+    this.props.addContact(contact);
+    // this.clearInputs();
+  }
+
+  clearInputs() {
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+    })
+  }
+
   render() {
     return (
       <main>
-        <form>
+        <form onSubmit={this.saveContact}>
           <label for="name">Name:</label>
           <input 
             type="text" 
@@ -52,4 +75,9 @@ class AddContacts extends Component {
   }
 }
 
-export default AddContacts;
+
+export const mapDispatchToProps = (dispatch) => ({
+  addContact: (contact) => dispatch(addContact(contact)),
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(AddContacts));
