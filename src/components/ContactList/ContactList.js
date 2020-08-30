@@ -12,7 +12,7 @@ class ContactList extends Component {
   render() {
     return (
       <div>
-        <h1>*** Add contacts here! ***</h1>
+        <h1>List of contacts</h1>
       </div>
     );
   }
