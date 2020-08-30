@@ -38,38 +38,35 @@ class ContactList extends Component {
     if (this.props.contacts.length) {
       let contacts = this.state.filteredContacts.map(contact => {
         return (
-          <li key={contact.id}>
-            <header>{contact.name}</header>
+          <li key={contact.id} className="contact">
+            <header className="name">{contact.name}</header>
             <section>
-              <p>{contact.phone}</p>
-              <p>{contact.email}</p>
+              <p>Phone Number: {contact.phone}</p>
+              <p>Email Address: {contact.email}</p>
             </section>
-            <button onClick={() => this.deleteContact(contact)}>Delete Contact</button>
+            <button className="delete-btn" onClick={() => this.deleteContact(contact)}>Delete Contact</button>
           </li>
         )
       })
       return (
-        <main>
+        <main className="contact-list">
           <form id="search" role="search">
-            <label>
-              Search Contacts 
             <input 
               type="search" 
-              id="searchInput" 
+              className="search-input" 
               spellCheck="false" 
+              placeholder="Search Contacts"
               onChange={this.filterContacts}/>
-            </label>
           </form>
-          <h3>Contacts: </h3>
-          <ul>
+          <ul className="contact-container">
             {contacts}
           </ul>
         </main>
       );
     } else {
       return (
-        <main>
-          <h3>You don't currently have any contacts. Click "Add Contacts" above to start adding new contacts.</h3>
+        <main className="contact-list-empty">
+          <h3 className="empty-message">You don't currently have any contacts. Click "Add Contacts" above to start adding new contacts.</h3>
         </main>
       )
     }
