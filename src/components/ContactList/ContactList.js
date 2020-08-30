@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { Component } from "react";
 import './ContactList.css';
 
-export default function ContactList() {
+class ContactList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    };
+  }
 
-  return (
-    <div className="contact-list">
-      <h1>It's the contact list page!</h1>
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <h1>*** Add contacts here! ***</h1>
+      </div>
+    );
+  }
 }
+
+export default ContactList;

@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import ContactList from '../ContactList/ContactList'
+import ContactList from '../ContactList/ContactList';
+import AddContacts from '../AddContacts/AddContacts';
 
 export default function App() {
   
@@ -14,7 +15,7 @@ export default function App() {
       <main>
         <Switch>
           <Route path="/Contacts">
-            <h1>Add Contacts</h1>
+            <AddContacts />
           </Route>
           <Route path="/">
             <ContactList />
