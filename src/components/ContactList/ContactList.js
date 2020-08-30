@@ -3,6 +3,7 @@ import './ContactList.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { deleteContact } from '../../redux/actions';
 
 class ContactList extends Component {
   constructor() {
@@ -10,6 +11,10 @@ class ContactList extends Component {
     this.state = {
       
     };
+  }
+
+  deleteContact = (contact) => {
+    this.props.deleteContact(contact);
   }
 
   render() {
@@ -22,6 +27,7 @@ class ContactList extends Component {
               <p>{contact.phone}</p>
               <p>{contact.email}</p>
             </section>
+            <button onClick={() => this.deleteContact(contact)}>Delete Contact</button>
           </li>
         )
       })
@@ -52,4 +58,8 @@ export const mapStateToProps = (state) => ({
   contacts: state.contacts
 });
 
-export default withRouter(connect(mapStateToProps, null)(ContactList));
+export const mapDispatchToProps = (dispatch) => ({
+  deleteContact: (contact) => dispatch(deleteContact(contact)),
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ContactList));

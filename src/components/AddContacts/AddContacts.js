@@ -27,7 +27,7 @@ class AddContacts extends Component {
       phone: this.state.phone
     };
     this.props.addContact(contact);
-    // this.clearInputs();
+    this.clearInputs();
   }
 
   clearInputs() {
@@ -42,31 +42,35 @@ class AddContacts extends Component {
     return (
       <main>
         <form onSubmit={this.saveContact}>
-          <label for="name">Name:</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            value={this.state.name} 
-            onChange={this.handleChange}
-            required />
-          <label for="email">Email:</label>
-          <input 
-            type="email" 
-            id="email" 
-            value={this.state.email} 
-            onChange={this.handleChange}
-            required />
+          <label>Name: 
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              required />
+          </label>
+          
+          <label>Email: 
+            <input
+              type="email"
+              id="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required />
+          </label>
           <small>Format: you@example.com</small>
-          <label for="phone">Phone Number:</label>
-          <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-            value={this.state.phone} 
-            onChange={this.handleChange}
-            required />
+          <label>Phone Number: 
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              value={this.state.phone}
+              onChange={this.handleChange}
+              required />
+          </label>
           <small>Format: 123-456-7890</small>
           <input type="submit" value="Save Contact"></input>
         </form>
