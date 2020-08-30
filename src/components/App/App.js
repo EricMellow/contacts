@@ -8,16 +8,16 @@ export default function App() {
   
   return (
     <div className="app">
-      <header>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/Contacts'>Add Contacts</NavLink>
+      <header className="nav-header">
+        <NavLink to='/home' activeClassName="selected" className="link">Home</NavLink>
+        <NavLink to='/contacts' activeClassName="selected" className="link">Add Contacts</NavLink>
       </header>
       <main>
         <Switch>
-          <Route path="/Contacts">
+          <Route exact path="/contacts">
             <AddContacts />
           </Route>
-          <Route path="/">
+          <Route exact path="/home">
             <ContactList />
           </Route>
         </Switch>
