@@ -61,7 +61,7 @@ class AddContacts extends Component {
                 value={this.state.email}
                 onChange={this.handleChange}
                 required />
-            <small>Format: you@example.com</small>
+            <small aria-valuetext="Format: you@example.com" tabIndex="0">Format: you@example.com</small>
           </div>
 
           <div className="input-container">
@@ -75,7 +75,7 @@ class AddContacts extends Component {
                 value={this.state.phone}
                 onChange={this.handleChange}
                 required />
-            <small>Format: 123-456-7890</small>
+            <small aria-label="Format: 123dash456dash7890" tabIndex="0">Format: 123-456-7890</small>
           </div>
           <input type="submit" value="Save Contact" className="save-btn"></input>
         </form>

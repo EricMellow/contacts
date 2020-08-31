@@ -38,11 +38,11 @@ class ContactList extends Component {
     if (this.props.contacts.length) {
       let contacts = this.state.filteredContacts.map(contact => {
         return (
-          <li key={contact.id} className="contact">
-            <header className="name">{contact.name}</header>
+          <li key={contact.id} className="contact" tabIndex="0" aria-label="contact card">
+            <header className="name" tabIndex="0">{contact.name}</header>
             <section>
-              <p>Phone Number: {contact.phone}</p>
-              <p>Email Address: {contact.email}</p>
+              <p tabIndex="0">Phone Number: {contact.phone}</p>
+              <p tabIndex="0">Email Address: {contact.email}</p>
             </section>
             <button className="delete-btn" onClick={() => this.deleteContact(contact)}>Delete Contact</button>
           </li>
