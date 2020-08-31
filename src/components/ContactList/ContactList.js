@@ -70,7 +70,7 @@ class ContactList extends Component {
     } else {
       return (
         <main className="contact-list-empty">
-          <h3 className="empty-message">You don't currently have any contacts. Click "Add Contacts" above to start adding new contacts.</h3>
+          <h3 className="empty-message" tabIndex="0">You don't currently have any contacts. Click "Add Contacts" above to start adding new contacts.</h3>
         </main>
       )
     }
