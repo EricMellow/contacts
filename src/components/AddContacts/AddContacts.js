@@ -40,39 +40,44 @@ class AddContacts extends Component {
 
   render() {
     return (
-      <main>
-        <form onSubmit={this.saveContact}>
-          <label>Name: 
+      <main className="add-contacts">
+        <form onSubmit={this.saveContact} className="form-container">
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="Contact Name"
+              className="inputs"
               value={this.state.name}
               onChange={this.handleChange}
               required />
-          </label>
           
-          <label>Email: 
+          <div className="input-container">
             <input
-              type="email"
-              id="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required />
-          </label>
-          <small>Format: you@example.com</small>
-          <label>Phone Number: 
+                type="email"
+                id="email"
+                className="inputs"
+                placeHolder="Email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                required />
+            <small>Format: you@example.com</small>
+          </div>
+
+          <div className="input-container">
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              value={this.state.phone}
-              onChange={this.handleChange}
-              required />
-          </label>
-          <small>Format: 123-456-7890</small>
-          <input type="submit" value="Save Contact"></input>
+                type="tel"
+                id="phone"
+                name="phone"
+                className="inputs"
+                placeHolder="Phone Number"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                value={this.state.phone}
+                onChange={this.handleChange}
+                required />
+            <small>Format: 123-456-7890</small>
+          </div>
+          <input type="submit" value="Save Contact" className="save-btn"></input>
         </form>
       </main>
     );
