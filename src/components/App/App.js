@@ -20,6 +20,9 @@ export default function App() {
           <Route exact path="/home">
             <ContactList />
           </Route>
+          <Route exact path="/">
+            <ContactList />
+          </Route>
         </Switch>
       </main>
     </div>
