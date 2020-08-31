@@ -10,7 +10,7 @@ describe('App', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<App />, { disableLifecycleMethods: true });
+    wrapper = shallow(<App />);
   });
 
   it('should match the snapshot', () => {

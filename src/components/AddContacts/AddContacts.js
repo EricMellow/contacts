@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addContact } from '../../redux/actions';
 
-class AddContacts extends Component {
+export class AddContacts extends Component {
   constructor() {
     super();
     this.state = {
