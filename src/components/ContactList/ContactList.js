@@ -18,9 +18,13 @@ class ContactList extends Component {
       filteredContacts: this.props.contacts
     })
   }
+  
 
-  deleteContact = (contact) => {
-    this.props.deleteContact(contact);
+  deleteContact = async (contact) => {
+    await this.props.deleteContact(contact);
+    this.setState({
+      filteredContacts: this.props.contacts
+    })
   }
 
   filterContacts = (event) => {
