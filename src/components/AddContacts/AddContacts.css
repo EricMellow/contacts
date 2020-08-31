@@ -38,6 +38,10 @@
   color: white;
 }
 
+.save-btn:hover {
+  cursor: pointer;
+}
+
 small {
   text-align: start;
   margin-left: 10px;

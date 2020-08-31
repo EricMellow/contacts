@@ -57,7 +57,7 @@ class AddContacts extends Component {
                 type="email"
                 id="email"
                 className="inputs"
-                placeHolder="Email"
+                placeholder="Email"
                 value={this.state.email}
                 onChange={this.handleChange}
                 required />
@@ -70,7 +70,7 @@ class AddContacts extends Component {
                 id="phone"
                 name="phone"
                 className="inputs"
-                placeHolder="Phone Number"
+                placeholder="Phone Number"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 value={this.state.phone}
                 onChange={this.handleChange}
