@@ -12,7 +12,7 @@ export default function App() {
         <NavLink to='/home' activeClassName="selected" className="link">Home</NavLink>
         <NavLink to='/contacts' activeClassName="selected" className="link">Add Contacts</NavLink>
       </header>
-      <main>
+      <main className="router-content">
         <Switch>
           <Route exact path="/contacts">
             <AddContacts />
