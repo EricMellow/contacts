@@ -25,9 +25,9 @@ class ContactList extends Component {
 
   filterContacts = (event) => {
     let filtered = this.props.contacts.filter(contact => 
-      contact.name.includes(event.target.value) || 
-      contact.phone.includes(event.target.value) ||
-      contact.email.includes(event.target.value))
+      contact.name.toLowerCase().includes(event.target.value.toLowerCase()) || 
+      contact.phone.toLowerCase().includes(event.target.value.toLowerCase()) ||
+      contact.email.toLowerCase().includes(event.target.value.toLowerCase()))
 
     this.setState({
       filteredContacts: filtered,
