@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { deleteContact } from '../../redux/actions';
 
-class ContactList extends Component {
+export class ContactList extends Component {
   constructor() {
     super();
     this.state = {
